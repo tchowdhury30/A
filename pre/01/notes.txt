@@ -1,0 +1,3 @@
+- what is the purpose of void method
+- what are objects and how do they work
+- trouble with complex loops and array syntax
