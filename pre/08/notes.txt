@@ -1,1 +1,1 @@
-
+I had a much harder time trying to figure out the Array and Loop exercises in the previous sections than the questions on CodingBat
