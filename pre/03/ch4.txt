@@ -1,0 +1,11 @@
+Chapter 4 Void Methods Exercise 1 -8/19/21
+1. The output of the program is:
+No, I wug.
+You wugga wug.
+I wug.
+2.
+main
+zoop
+baffle
+ping
+3. creates an infinite loop
