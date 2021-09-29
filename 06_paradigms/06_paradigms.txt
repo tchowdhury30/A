@@ -1,0 +1,10 @@
+"Hello World"
+
+Wescheme:
+"Hello, world!"
+
+Netlogo:
+print "Hello, world!"
+
+Python:
+print ("Hello, world!")
