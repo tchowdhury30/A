@@ -1,1 +1,2 @@
-see comments 
+I spent a lot of time thinking about these problems and could not figure out codeable and syntaxically correct solutions
+so I was frustrated and gave up.
