@@ -3,7 +3,8 @@ Ocho!: Nora,, Tasnim, Hamim
 10-19-2021
 DISCO:
 Accidentally putting a character after a semicolon messes up the next line, which makes sense since whitespace doesnt matter
-It's good to keep track of how operations change certain values and how methods may be affected (ex: depositing a negative amount to make balance negative and then withdrawing gives an error)
+It's good to keep track of how operations change certain values and how methods may be affected 
+(ex: depositing a negative amount to make balance negative and then withdrawing gives an error)
 QCC:
 The error messages could be a bit more specific for the user's sake
 Maybe authenticate could include the pin
