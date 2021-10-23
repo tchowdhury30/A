@@ -1,4 +1,12 @@
 /***
+Moo | Faiza Huda, Tasnim Chowdhury, Truthful Tom, Mary
+APCS
+HW23 -- What Does Equality Look Like?
+2021-10-23
+time spent: 1.02
+***/
+
+/***
  *  class Coin
  *  by Clyde "Thluffy" Sinclair
  *  SKELETON
@@ -22,12 +30,7 @@ public class Coin {
    *  postcond:
    ***/
   public Coin() {
- 	value = 0;
-	upFace = "";
-	name = "";
-	headsCtr = 0;
-	tailsCtr = 0;
-	bias = 0.0;
+	upFace = "heads";
   }
 
 
@@ -94,15 +97,13 @@ public class Coin {
 	} else if (s == "nickel") {
 		value = 0.05;
 	} else if (s == "dime") {
-		value = 0.10; {
+		value = 0.10;
 	} else if (s == "quarter") {
 		value = 0.25;
 	} else if (s == "half dollar") {
 		value = 0.50;
 	} else if (s == "dollar") {
 		value = 1.00;
-	} else {
-		System.out.println("Please input a valid String input");
 	}
 	return value;
   }
@@ -113,10 +114,10 @@ public class Coin {
       precond:  s is "heads" or "tails", 0.0 <= d <= 1.0
       postcond: Coin's attribs reset to starting vals
   ***/
-/**
-  public void reset( String s, double d ) {
-	return 0.0;
 
+  public void reset( String s, double d ) {
+	upFace = s;
+	bias = d;
   }
 
 
@@ -129,11 +130,19 @@ public class Coin {
    * Either headsCtr or tailsCtr incremented by 1, as approp.
    * Returns "heads" or "tails"
    ***/
-/**
+
   public String flip() {
-
-  }
-
+	double nefarious = Math.random();
+	if (nefarious > bias) {
+		upFace = "tails";
+		tailsCtr++;
+  	} else  {
+		upFace = "heads";
+		headsCtr++;
+	}
+	flipCtr++;
+	return (name+" - - "+upFace); 
+}
 
   /***
    * boolean equals(Coin) -- checks to see if 2 coins have same face up
@@ -141,9 +150,9 @@ public class Coin {
    * postcond: Returns true if both coins showing heads
    * or both showing tails. False otherwise.
    ***/
-/**
-  public boolean equals( Coin other ) {
 
+  public boolean equals( Coin other ) {
+	return (upFace == this.upFace);
   }
 
 
@@ -152,10 +161,10 @@ public class Coin {
    * precond: n/a
    * postcond: Return String comprised of name and current face
    ***/
-/**
-  public String toString() {
 
+  public String toString() {
+	return name+" - - "+ upFace; 
   }
-**/
+
 }//end class
 
