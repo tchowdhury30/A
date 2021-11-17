@@ -1,0 +1,17 @@
+Compile-time Errors
+- check parenthesis, brackets
+- upper does not equal lowercase
+- semicolons
+- debugging by bisection
+
+Run-time Errors
+- check for infinite loops/recursion by using print statements
+- can't access element greater than array.length-1
+- variables are null unless you assign a value to them
+
+Logic Errors
+-fix mental model
+- remember floating point numbers are approcimate
+- integer division rounds towards 0
+
+- talk to ducky to try finding solution since explaining can help you see solution
