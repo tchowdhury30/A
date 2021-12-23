@@ -1,16 +1,16 @@
 /*
 Cute Cyclops Cult | Tasnim Chowdhury, Rin Fukuoka, Huebert and Tom, Faiza Huda, Mary, Tape
 APCS
-HW42 -- Be More Rational
-QCC-
- - We used piazza to assess whether or not we should have two gcd methods and decided thusly
- - Why do we have two gcd methods?
+HW49: Rational Standards Compliance
+
 DISCO-
- - nothing to report here
+-throwing new exceptions woah so cool
+-will stop all of code unless use try-catch
+QCC-
+-Why do we need equalsto method?
 
-2021-12-05
-time spent: 1
-
+2021-12-22
+time spent: 0.5
 */
 
 public class Rational implements Comparable{
@@ -37,16 +37,6 @@ public class Rational implements Comparable{
     }
 
   }
-
-  /* Accessor methods:
-  public int getNum() {
-    return numerator;
-  }
-
-  public int getDenom() {
-    return denominator;
-  }
-  */
 
   public double floatValue(){
     return (double)(numerator) / denominator;
@@ -113,92 +103,32 @@ public class Rational implements Comparable{
     denominator = denominator / gcd;
   }
 
-	public int compareTo(Object o) {
-	if (o instanceof Rational) {
-	Rational other = (Rational) o;
-    int otherCProduct = denominator * other.numerator;
-    int CProduct = numerator * other.denominator;
-    if (CProduct > otherCProduct) {
-      return 1; //positive meaning calling object is greater than parameter
-    } else if (otherCProduct > CProduct) {
-      return -1; //negative meaning calling object is less than paramter
+  public int compareTo(Object o) {
+		if (o instanceof Rational) {
+			Rational other = (Rational) o;
+    	int otherCProduct = denominator * other.numerator;
+    	int CProduct = numerator * other.denominator;
+    	if (CProduct > otherCProduct) {
+      	return 1; //positive meaning calling object is greater than parameter
+    	} else if (otherCProduct > CProduct) {
+      	return -1; //negative meaning calling object is less than paramter
+    	} else {
+      	return 0; //zero meaning they have the same value
+  	}
+  } else {
+    	throw new ClassCastException("\nCompareTo() input not a Rational");
+		}
+}
+
+  public boolean equals(Object other){
+    if (other instanceof Rational) {
+      if ((compareTo(other)) == 0) {
+        return true;
+      } else {
+        return false;
+      }
     } else {
-      return 0; //zero meaning they have the same value
+      throw new ClassCastException("\nCompareTo() input not a Rational");
     }
-} else {
-System.out.println("BooYah");
-return 0;
-}
-
   }
-
-
-
-  public static void main( String [] args ) {
-    Rational e1 = new Rational(2, 5);
-    Rational e2 = new Rational(6, -3);
-    Rational e3 = new Rational(1, 0);
-    Rational e4 = new Rational(1, 2);
-
-    //Print out the initial value
-    System.out.println(e1.toString());   //  2/5
-    System.out.println(e2.toString());   //  6/-3
-    System.out.println(e3.toString());   //  0/1
-
-    System.out.println();
-    //Print a floating point approxiamtion
-    System.out.println(e2.floatValue());
-    System.out.println(e2.floatValue());
-    System.out.println(e3.floatValue());
-
-    System.out.println();
-    //Print products of rational numbers
-    e1.multiply(e2);
-    System.out.println(e1.toString());    // 12/-15
-    e2.multiply(e3);
-    System.out.println(e2.toString());    // 0/-3
-
-    System.out.println();
-    //Print quotients of rational numbers
-    e1.divide(e4);
-    System.out.println(e1.toString()); // 24/-15
-    e2.divide(e4);
-    System.out.println(e2.toString()); // 0/-3
-
-
-    Rational e6 = new Rational(2, 5);
-    Rational e7 = new Rational(1, 3);
-    Rational e8 = new Rational(4, 8);
-
-    System.out.println();
-    //Print sum of rational numbers
-    e6.add(e7);
-    System.out.println(e6.toString()); // 11/15
-
-    System.out.println();
-    //Print difference of rational numbers
-    e7.subtract(e8);
-    System.out.println(e7.toString()); // -4/24
-
-    System.out.println();
-    //Print out gcd
-    System.out.println(e6.gcd()); // 1
-    System.out.println(e7.gcd()); // 4
-    System.out.println(e8.gcd()); // 4
-
-    System.out.println();
-    //Print out reduced number
-    e7.reduce();
-    e8.reduce();
-    System.out.println(e7.toString()); // -1/6
-    System.out.println(e8.toString()); // 1/2
-
-    System.out.println();
-    //Compare two rational numbers
-    System.out.println(e7.compareTo(e8)); // -1
-
-
-  }
-
-
-}
+} //end of class
