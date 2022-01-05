@@ -2,7 +2,7 @@
 // APCS pd8
 // HW52 -- implementing selection sort
 // 2022-01-05w
-// time spent:  hrs
+// time spent:  1hr
 
 /******************************
  *   class SelectionSort -- implements SelectionSort algorithm
@@ -91,7 +91,7 @@ public class SelectionSort
   // postcondition: order of input ArrayList's elements unchanged
   //                Returns sorted copy of input ArrayList.
 
-/*
+
   public static ArrayList<Comparable> selectionSort( ArrayList<Comparable> input )
   {
     //declare and initialize empty ArrayList for copying
@@ -106,7 +106,7 @@ public class SelectionSort
 
     return data;
   }//end selectionSort
-*/
+
 
   public static void main( String [] args )
   {
