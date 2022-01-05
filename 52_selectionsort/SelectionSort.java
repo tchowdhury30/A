@@ -12,7 +12,9 @@
  * 2. Select next smallest, move to next-to-end.
  * 3. Wash, rinse, repeat.
  * DISCO
- *
+ * - Selectionsort is right to left while bubble sort was from left to right.
+ * - We have to use pass-- in our loops since the loop goes from right to left
+ *   as oppose to left to right which is why we do not use pass++. 
  * QCC
  * q0: How many passes to sort n elements?
  * a0: n-1 passes
@@ -67,7 +69,7 @@ public class SelectionSort
    //maxPos will point to position of SELECTION (greatest value)
    int maxPos;
 
-   for(int pass=data.size()-1; pass < 0; pass-- ) {
+   for(int pass=data.size()-1; pass > 0; pass-- ) {
      System.out.println( "\nbegin pass " + (data.size()-pass) );//diag
      int min = (int)(data.get(0));;
 
