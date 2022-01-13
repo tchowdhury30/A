@@ -1,3 +1,9 @@
+// Green Mushrooms | Kartik Vanjani, Tasnim Chowdhury, Emily Ortiz
+// APCS Pd. 8
+// HW 56 Turing Training Wheels
+// 2022-01-12
+// time spent: 1.5
+
 import java.util.Random;
 
 /**
