@@ -27,6 +27,11 @@ public class Magpie2
 	 * @param statement
 	 *            the user statement
 	 * @return a response based on the rules given
+	 * The higher up a key word conditional is in the getResponse method, the
+	 * higher priority it has.
+	 * QUESTION 1: These statements have key words as part of other words, and so
+	 * return a response based on the key words even though they don't necessarily
+	 * make sense (eg. no in know & mother in smothered ).
 	 */
 	public String getResponse(String statement)
 	{
@@ -51,6 +56,18 @@ public class Magpie2
 		{
 			response = "He sounds terrific.";
 		}
+		else if (statement.indexOf("Emily") >= 0)
+		{
+			response = "OMG!! I know her, too!";
+		}
+		else if (statement.indexOf("Kartik") >= 0)
+		{
+			response = "Hey, I've heard of him from somwhere!";
+		}
+		else if (statement.indexOf("Tasnim") >= 0)
+		{
+			response = "I think she is in my APCS class.";
+		}
 		else
 		{
 			response = getRandomResponse();
@@ -64,7 +81,7 @@ public class Magpie2
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -84,6 +101,14 @@ public class Magpie2
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
+		}
+		else if (whichResponse == 4)
+		{
+			response = "I really don't care, but you seem to. Continue.";
+		}
+		else if (whichResponse == 5)
+		{
+			response = "For real? That's so awesome.";
 		}
 
 		return response;
