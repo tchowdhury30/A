@@ -1,10 +1,10 @@
 /**
  * A program to carry on conversations with a human user.
- * This version: 
+ * This version:
  * <ul><li>
- *    Uses advanced search for keywords 
- * </li></ul> 
- *    
+ *    Uses advanced search for keywords
+ * </li></ul>
+ *
  * @author Laurie White
  * @version April 2012
  */
@@ -12,7 +12,7 @@ public class Magpie3
 {
 	/**
 	 * Get a default greeting
-	 * 
+	 *
 	 * @return a greeting
 	 */
 	public String getGreeting()
@@ -22,7 +22,7 @@ public class Magpie3
 
 	/**
 	 * Gives a response to a user statement
-	 * 
+	 *
 	 * @param statement
 	 *            the user statement
 	 * @return a response based on the rules given
@@ -44,6 +44,27 @@ public class Magpie3
 				|| findKeyword(statement, "brother") >= 0)
 		{
 			response = "Tell me more about your family.";
+		}
+		else if (findKeyword(statement, "dog") >= 0
+				|| findKeyword(statement, "cat") >= 0
+		{
+			response = "Tell me more about your pets.";
+		}
+		else if (findKeyword(statement, "Mr. Mykolyk") >= 0
+		{
+			response = "He's awesome.";
+		}
+		else if (findKeyword(statement, "Faiza") >= 0
+		{
+			response = "She's a traitor.";
+		}
+		else if (findKeyword(statement, "Atom") >= 0
+		{
+			response = "It's better than gedit.";
+		}
+		else if (findKeyword(statement, "CollegeBoard") >= 0
+		{
+			response = "It really does suck.";
 		}
 		else
 		{
@@ -122,7 +143,7 @@ public class Magpie3
 	 * is not a substring of a longer string (so, for
 	 * example, "I know" does not contain "no"). The search
 	 * begins at the beginning of the string.
-	 * 
+	 *
 	 * @param statement
 	 *            the string to search
 	 * @param goal
@@ -137,12 +158,12 @@ public class Magpie3
 
 	/**
 	 * Pick a default response to use if nothing else fits.
-	 * 
+	 *
 	 * @return a non-committal string
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -163,6 +184,15 @@ public class Magpie3
 		{
 			response = "You don't say.";
 		}
+		else if (whichResponse == 4)
+		{
+			response = "Huh?";
+		}
+		else if (whichResponse == 5)
+		{
+			response = "Ok.";
+		}
+
 
 		return response;
 	}
